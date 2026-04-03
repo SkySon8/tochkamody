@@ -1,4 +1,4 @@
 User-agent: *
 Allow: /
-Sitemap: https://tochkamody.ru/sitemap.xml
+Sitemap: https://skyson8.github.io/tochkamody/sitemap.xml
 Disallow: /admin.html
