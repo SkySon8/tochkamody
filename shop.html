@@ -1,0 +1,128 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
+    <title>Точка Моды | Интернет-магазин одежды и аксессуаров</title>
+    <meta name="description" content="Точка Моды — ваш гид в мире стиля. Огромный выбор одежды, обуви, сумочек и аксессуаров. Регистрация, корзина, избранное, промокоды. Доставка по всей России.">
+    <meta name="keywords" content="Точка Моды, одежда купить, обувь, сумки, аксессуары, интернет-магазин модной одежды">
+    <meta name="author" content="Точка Моды">
+    <link rel="canonical" href="https://tochkamody.ru">
+    <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'%3E%3Ctext y='.9em' font-size='90'%3E👗%3C/text%3E%3C/svg%3E">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:opsz,wght@14..32,300;14..32,400;14..32,500;14..32,600;14..32,700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+<header>
+    <div class="container">
+        <nav class="navbar">
+            <div class="logo">
+                <i class="fas fa-tshirt"></i> Точка Моды
+            </div>
+            <div class="nav-links" id="navLinks">
+                <a href="#" class="active" data-category="all">Все товары</a>
+                <a href="#" data-category="clothing">Одежда</a>
+                <a href="#" data-category="shoes">Обувь</a>
+                <a href="#" data-category="bags">Сумки</a>
+                <a href="#" data-category="accessories">Аксессуары</a>
+            </div>
+            <div class="nav-icons">
+                <div class="icon-wrapper">
+                    <i class="fas fa-heart" id="favoritesBtn"></i>
+                    <span class="badge favorites-badge" id="favoritesCount">0</span>
+                </div>
+                <div class="icon-wrapper">
+                    <i class="fas fa-shopping-cart" id="cartBtn"></i>
+                    <span class="badge cart-badge" id="cartCount">0</span>
+                </div>
+                <div class="icon-wrapper">
+                    <i class="fas fa-user" id="userBtn"></i>
+                </div>
+            </div>
+            <div class="burger" id="burger">
+                <i class="fas fa-bars"></i>
+            </div>
+        </nav>
+    </div>
+</header>
+
+<main>
+    <div class="container">
+        <div class="filters-bar">
+            <div class="sort-select">
+                <label>Сортировать:</label>
+                <select id="sortSelect">
+                    <option value="default">По умолчанию</option>
+                    <option value="price-asc">Цена: по возрастанию</option>
+                    <option value="price-desc">Цена: по убыванию</option>
+                    <option value="name">По названию</option>
+                </select>
+            </div>
+            <div class="search-box">
+                <i class="fas fa-search"></i>
+                <input type="text" id="searchInput" placeholder="Поиск товаров...">
+            </div>
+        </div>
+
+        <div class="products-grid" id="productsGrid"></div>
+        <div class="pagination" id="pagination"></div>
+    </div>
+</main>
+
+<!-- Модальное окно товара -->
+<div id="productModal" class="modal">
+    <div class="modal-content">
+        <span class="modal-close">&times;</span>
+        <div class="product-modal-body" id="productModalBody"></div>
+    </div>
+</div>
+
+<!-- Модальное окно корзины -->
+<div id="cartModal" class="modal">
+    <div class="modal-content cart-modal">
+        <span class="modal-close">&times;</span>
+        <h2><i class="fas fa-shopping-cart"></i> Корзина</h2>
+        <div id="cartContent"></div>
+        <div class="cart-total" id="cartTotal"></div>
+        <div class="cart-actions">
+            <input type="text" id="promoCodeInput" placeholder="Введите промокод">
+            <button id="applyPromoBtn" class="btn-outline">Применить</button>
+        </div>
+        <button id="checkoutBtn" class="btn-primary">Оформить заказ</button>
+    </div>
+</div>
+
+<!-- Модальное окно избранного -->
+<div id="favoritesModal" class="modal">
+    <div class="modal-content">
+        <span class="modal-close">&times;</span>
+        <h2><i class="fas fa-heart"></i> Избранное</h2>
+        <div id="favoritesContent"></div>
+    </div>
+</div>
+
+<!-- Модальное окно пользователя (регистрация/авторизация) -->
+<div id="userModal" class="modal">
+    <div class="modal-content user-modal">
+        <span class="modal-close">&times;</span>
+        <div id="userContent"></div>
+    </div>
+</div>
+
+<!-- Модальное окно восстановления пароля -->
+<div id="resetModal" class="modal">
+    <div class="modal-content user-modal">
+        <span class="modal-close">&times;</span>
+        <div id="resetContent"></div>
+    </div>
+</div>
+
+<!-- Скрытая ссылка на админ-панель -->
+<div style="position: fixed; bottom: 10px; right: 10px; opacity: 0.2; font-size: 10px;">
+    <a href="admin.html" style="color: #6B8C5C;">Admin</a>
+</div>
+
+<script src="script.js"></script>
+</body>
+</html>
